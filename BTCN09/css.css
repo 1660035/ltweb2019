@@ -1,0 +1,145 @@
+
+
+
+
+
+
+
+
+
+ 
+
+  .search-input {
+    border-right: 0;
+  }
+  
+  .input-group-addon {
+    background: white;
+    border-left: 0;
+    border-right: 0;
+  }
+  
+  .input-group-addon:last-child {
+    border-left: 0;
+    border-right: 1px solid #ccc;
+  }
+
+
+body{
+    font-size: 16px;
+    margin: 0px;
+    padding: 0;
+    line-height: 2;
+    background: #ffffff;
+    font-family: tahoma, sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+h2{
+    text-align: center;
+    font-weight: bold;
+
+}
+
+
+
+image{
+    widows: 100%;                       /*khong cho dan hinh vuot qua div long no*/
+}
+
+a
+{
+     text-decoration: none;    /* bỏ gạch chân cho phần link */
+}
+
+background{
+    width: 50px;
+    height: 50px;
+}
+
+table tr td{
+    text-align: center;
+}
+table th {
+    text-align: center;
+}
+
+
+/*---------------------------
+Caption-Style-3
+------------------------*/        
+.caption-style-3{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    
+}
+.caption-style-3 li{
+    float: left;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+}
+.caption-style-3 li:hover .caption{
+    opacity: 1;
+    transform: translateY(-100px);
+    -webkit-transform:translateY(-100px);
+    -moz-transform:translateY(-100px);
+    -ms-transform:translateY(-100px);
+    -o-transform:translateY(-100px);
+}
+.caption-style-3 li:hover img{
+    opacity: 1;
+    transform: translateY(-40px);
+    -webkit-transform:translateY(-40px);
+    -moz-transform:translateY(-40px);
+    -ms-transform:translateY(-40px);
+    -o-transform:translateY(-40px);
+}
+.caption-style-3 img{
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    z-index: 0;
+    width: 250px;
+    height: 250px;
+}
+.caption-style-3 .caption{
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    top:300px;
+    -webkit-transition:all 0.15s ease-in-out;
+    -moz-transition:all 0.15s ease-in-out;
+    -o-transition:all 0.15s ease-in-out;
+    -ms-transition:all 0.15s ease-in-out;
+    transition:all 0.15s ease-in-out;
+}
+.caption-style-3 img{
+    -webkit-transition:all 0.15s ease-in-out;
+    -moz-transition:all 0.15s ease-in-out;
+    -o-transition:all 0.15s ease-in-out;
+    -ms-transition:all 0.15s ease-in-out;
+    transition:all 0.15s ease-in-out;
+}
+.caption-style-3 .blur{
+    background-color: rgba(142, 68, 173,0.95);
+    width: 250px;
+    height: 250px;
+    z-index: 5;
+    position: absolute;
+}
+.caption-style-3 .caption-text h1{
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.caption-style-3 .caption-text{
+    z-index: 10;
+    color: #fff;
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    top:20px;
+}
