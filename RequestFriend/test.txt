@@ -1,0 +1,85 @@
+
+<?php
+    require_once 'init.php';
+    require_once 'functions.php';
+    $posts = getNewFeeds();
+
+    if(!$currentUser) {
+        header('Location: index.php');
+        exit();
+    }
+
+    $userId = $_GET['id'];
+    $profile = findUserById($userId);
+
+    $isFollowing = getFriendShip($currentUser['id'], $userId);
+    $isFollower =  getFriendShip($userId, $currentUser['id']);
+
+
+?>
+<?php include 'header.php'; ?>
+<p><?php echo $profile['displayName']; ?></p>
+<img src="<?php echo $profile['avatar']; ?>" alt="" class="rounded-circle" style="width:140px;">
+            <?php if ($isFollower && $isFollowing): ?>
+Friend 
+            <form action="remove-friend.php" method="POST">
+                <input type="hidden" name="id" id="id" value="<?php echo $profile['id']; ?>">
+                <button type="submit" class="btn btn-primary">
+                    BLOCK
+                </button>
+            </form>
+            <?php else: ?>
+                <?php if($isFollowing && !$isFollower): ?>
+
+                    <form action="remove-friend.php" method="POST">
+                        <input type="hidden" name="id" id="id" value="<?php echo $profile['id']; ?>">
+                        <button type="submit" class="btn btn-primary">
+                            Xoa yeu cau 
+                        </button>
+                    </form>
+                <?php endif; ?>
+
+
+                <?php if(!$isFollowing && $isFollower): ?>
+
+                    <form action="remove-friend.php" method="POST">
+                        <input type="hidden" name="id" id="id" value="<?php echo $profile['id']; ?>">
+                        <button type="submit" class="btn btn-primary">
+                            Huy yeu cau
+                        </button>
+                    </form>
+                    <form action="add-friend.php" method="POST">
+                        <input type="hidden" name="id" id="id" value="<?php echo $profile['id']; ?>">
+                        <button type="submit" class="btn btn-primary">
+                            Dong y
+                        </button>
+                    </form>
+
+
+                <?php endif; ?>
+
+
+                <?php if(!$isFollowing && !$isFollower): ?>
+
+                    <form action="add-friend.php" method="POST">
+                        <input type="hidden" name="id" id="id" value="<?php echo $profile['id']; ?>">
+                        <button type="submit" class="btn btn-primary">
+                            Gui yeu cau
+                        </button>
+                    </form>
+                <?php endif; ?>
+
+
+            <?php endif; ?>
+            
+
+
+
+
+
+
+
+
+
+
+
